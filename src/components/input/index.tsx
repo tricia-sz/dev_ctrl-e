@@ -12,6 +12,9 @@ interface InputProps {
 }
 
 export function Input({name, placeholder, type, register, rules, error}: InputProps) {
+    console.log();
+    
+    
     return (
         <>
             <input 

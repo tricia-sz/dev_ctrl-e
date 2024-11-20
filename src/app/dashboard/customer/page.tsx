@@ -14,7 +14,7 @@ export default async function Customer() {
 
   return (
     <Container>
-      <main className="mt-9 mb-2">
+      <main className="t-9 mb-2 bg-sc">
         <div className="flex items-center justify-between">
           <h1 className="text-3xl font-bold">Meus clientes</h1>
           <Link href="/dashboard/customer/new" className="bg-blue-600 text-white px-4 py-1 rounded">
