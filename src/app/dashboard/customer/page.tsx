@@ -5,6 +5,7 @@ import { redirect } from 'next/navigation'
 
 import Link from 'next/link'
 import { CardCustomer } from './components/card'
+import prismaClient from "@/lib/prisma"
 
 export default async function Customer() {
   const session = await getServerSession(authOptions)
@@ -12,6 +13,12 @@ export default async function Customer() {
   if (!session || !session.user) {
     redirect("/")
   }
+
+  const customers = await prismaClient.customer.findMany({
+    where: {
+        userId: session.user.id
+    }
+  })
 
   return (
     <Container>
@@ -24,11 +31,13 @@ export default async function Customer() {
         </div>
 
         <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mt-2">
-          <CardCustomer />
-
-          <CardCustomer />
-
-          <CardCustomer />
+            {customers.map(customer => (
+                <CardCustomer 
+                    key={customer.id}
+                    customer={customer}
+                    
+                />
+            ))}
         </section>
 
 
