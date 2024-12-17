@@ -36,7 +36,8 @@ export async function PATCH(request: Request){
 
     return NextResponse.json({ message: "Chamado atualizado com sucesso!" })
     
-  }catch(err){
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  }catch(error){
     return NextResponse.json({ error: "Filed update ticket" }, { status: 400 })
   }
 
@@ -64,7 +65,8 @@ export async function POST(request: Request){
 
     return NextResponse.json({ message: "Chamado registrado com sucesso!"})
 
-  }catch(err){
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  }catch(error){
     return NextResponse.json({ error: "Failed create new ticket"}, { status: 400 });
   }
 

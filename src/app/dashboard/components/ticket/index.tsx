@@ -4,7 +4,6 @@ import { useContext } from 'react'
 import { FiCheckSquare, FiFile } from 'react-icons/fi'
 import { TicketProps } from '@/utils/ticket.type'
 import { CustomerProps } from '@/utils/customer.type';
-import { api } from '@/lib/api'
 import { useRouter } from 'next/navigation'
 
 import { ModalContext } from '@/providers/modal'
@@ -20,9 +19,6 @@ export function TicketItem({ customer, ticket }: TicketItemProps) {
 
   async function handleChangeStatus() {
     try {
-      const response = await api.patch("/api/ticket", {
-        id: ticket.id,
-      })
 
       router.refresh();
 

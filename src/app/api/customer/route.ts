@@ -22,6 +22,7 @@ export async function GET(request: Request){
 
     return NextResponse.json(customer)
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   }catch(err){
     return NextResponse.json({ error: "Customer not found" }, { status: 400 })
   }
@@ -94,6 +95,7 @@ export async function POST(request: Request){
 
     return NextResponse.json({ message: "Cliente cadastrado com sucesso!" })
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   }catch(err){
     return NextResponse.json({ error: "Failed crete new customer" }, { status: 400 })
   }
