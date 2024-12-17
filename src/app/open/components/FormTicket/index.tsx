@@ -23,6 +23,7 @@ export function FormTicket({ customer }: FormTicketProps) {
   })
 
   async function handleRegisterTicket(data: FormData) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const response = await api.post("/api/ticket", {
       name: data.name,
       description: data.description,
