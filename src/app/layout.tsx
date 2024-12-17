@@ -8,7 +8,7 @@ import { ModalProvider } from '@/providers/modal'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Dev CTRL-e - Seu sistema de gerencimaneto.',
+  title: 'Dev CTRL-e Seu sistema de gerencimaneto.',
   description: 'Gerencie seus clientes e atendimentos de forma fácil!',
 }
 
